@@ -6,23 +6,20 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 12:56:43 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/02 16:55:15 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/02 20:58:48 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
-# define WIDTH 800
-# define HEIGHT 800
-
-#include <MLX42/MLX42.h>
+# include <MLX42/MLX42.h>
 # include <stdbool.h>
 # include <stdlib.h>
 
 # define WIDTH 800
 # define HEIGHT 800
-# define MAX_ITER 1000
+# define MAX_ITER 100
 
 # define BLACK 0x000000
 # define RED 0xFF0000
@@ -32,11 +29,21 @@
 
 typedef struct
 {
-	double	real;
-	double	imag;
-}			t_complex;
+	double		real;
+	double		imag;
+}				t_complex;
 
-void		draw_mandelbrot(mlx_image_t *image);
-uint32_t	get_color(int n);
+typedef struct s_data
+{
+	mlx_t		*mlx;
+	mlx_image_t	*image;
+	double		zoom;
+	double		offset_x;
+	double		offset_y;
+}				t_data;
+
+uint32_t		get_color(int n);
+void			draw_mandelbrot(t_data *data);
+void			zoom_func(double xdelta, double ydelta, void *param);
 
 #endif

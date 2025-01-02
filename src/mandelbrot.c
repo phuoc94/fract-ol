@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 18:47:56 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/02 16:39:19 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/02 21:02:25 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ static int	is_within_radius(t_complex z)
 static int	calc_mandelbrot(t_complex c)
 {
 	t_complex	z;
-	double	temp;
-	int		n;
-	double	real_squared;
-	double	imag_squared;
+	double		temp;
+	int			n;
+	double		real_squared;
+	double		imag_squared;
 
 	z.real = 0;
 	z.imag = 0;
@@ -43,13 +43,13 @@ static int	calc_mandelbrot(t_complex c)
 	return (n);
 }
 
-void	draw_mandelbrot(mlx_image_t *image)
+void	draw_mandelbrot(t_data *data)
 {
 	t_complex	c;
-	int		x;
-	int		y;
-	int		n;
-	int		color;
+	int			x;
+	int			y;
+	int			n;
+	int			color;
 
 	x = 0;
 	while (x < WIDTH)
@@ -57,11 +57,13 @@ void	draw_mandelbrot(mlx_image_t *image)
 		y = 0;
 		while (y < HEIGHT)
 		{
-			c.real = (x - WIDTH / 2.0) * 4.0 / WIDTH;
-			c.imag = (y - HEIGHT / 2.0) * 4.0 / HEIGHT;
+			c.real = (x - WIDTH / 2.0) * 4.0 / WIDTH / data->zoom
+				+ data->offset_x;
+			c.imag = (y - HEIGHT / 2.0) * 4.0 / HEIGHT / data->zoom
+				+ data->offset_y;
 			n = calc_mandelbrot(c);
 			color = get_color(n);
-			mlx_put_pixel(image, x, y, color);
+			mlx_put_pixel(data->image, x, y, color);
 			y++;
 		}
 		x++;
