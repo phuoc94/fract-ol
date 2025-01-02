@@ -6,7 +6,7 @@
 #    By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 18:26:02 by phuocngu          #+#    #+#              #
-#    Updated: 2025/01/02 20:59:17 by phuocngu         ###   ########.fr        #
+#    Updated: 2025/01/02 22:02:33 by phuocngu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ SRC_DIR = ./src
 
 SRC_FILES = $(SRC_DIR)/main.c \
 			$(SRC_DIR)/mandelbrot.c \
+			$(SRC_DIR)/julia.c \
+			$(SRC_DIR)/initial_setup.c \
 			$(SRC_DIR)/utils/get_color.c \
 			$(SRC_DIR)/utils/zoom.c \
 

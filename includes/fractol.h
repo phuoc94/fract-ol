@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 12:56:43 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/02 20:58:48 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/02 21:44:19 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <MLX42/MLX42.h>
 # include <stdbool.h>
 # include <stdlib.h>
+# include <string.h> // strcmp
+# include <stdio.h> // printf
 
 # define WIDTH 800
 # define HEIGHT 800
@@ -40,10 +42,18 @@ typedef struct s_data
 	double		zoom;
 	double		offset_x;
 	double		offset_y;
+	double		julia_real;
+	double		julia_imag;
 }				t_data;
 
-uint32_t		get_color(int n);
+int				validate_args(int argc, char **argv);
+void			initialize_data(t_data *data, char **argv);
+int				setup_window(t_data *data, char *title);
+
 void			draw_mandelbrot(t_data *data);
+void			draw_julia(t_data *data);
+
+uint32_t		get_color(int n);
 void			zoom_func(double xdelta, double ydelta, void *param);
 
 #endif
