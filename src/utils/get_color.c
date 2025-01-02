@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 20:20:32 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/02 17:01:18 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/02 21:54:49 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 uint32_t	get_color(int n)
 {
-	uint32_t color;
+	uint32_t	color;
 
 	if (n == MAX_ITER)
 		color = BLACK;
@@ -26,6 +26,5 @@ uint32_t	get_color(int n)
 		color = BLUE;
 	else
 		color = WHITE;
-
 	return (color);
 }
