@@ -6,7 +6,7 @@
 #    By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 18:26:02 by phuocngu          #+#    #+#              #
-#    Updated: 2025/01/02 16:09:19 by phuocngu         ###   ########.fr        #
+#    Updated: 2025/01/02 16:33:36 by phuocngu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,10 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRC_DIR = ./src
-SRC_FILES = $(SRC_DIR)/main.c
+
+SRC_FILES = $(SRC_DIR)/main.c \
+			$(SRC_DIR)/mandelbrot.c \
+			$(SRC_DIR)/utils/get_color.c \
 
 OBJS = $(SRC_FILES:.c=.o)
 

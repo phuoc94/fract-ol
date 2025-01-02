@@ -51,5 +51,9 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+# Local configuration file (sdk path, etc)
+.vscode/
+
 # Project files
 fractol
+MLX42/
