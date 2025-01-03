@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 12:56:43 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/03 17:17:45 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/03 20:07:24 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct
 
 typedef struct s_data
 {
+	char		*title;
 	mlx_t		*mlx;
 	mlx_image_t	*image;
 	double		zoom;
@@ -46,14 +47,15 @@ typedef struct s_data
 
 int				validate_args(int argc, char **argv);
 void			initialize_data(t_data *data, char **argv);
-int				setup_window(t_data *data, char *title);
+int				setup_window(t_data *data);
 
 void			draw_mandelbrot(t_data *data);
-void			draw_julia(t_data *data);
+void			draw_julia(t_data *data, t_complex c);
 
 uint32_t		get_color(int n);
 void			zoom_func(double xdelta, double ydelta, void *param);
 void			esc_key_func(mlx_key_data_t keydata, void *param);
+int				is_within_radius(t_complex z);
 
 int				ft_strcmp(const char *s1, const char *s2);
 void			ft_putstr_fd(const char *s, int fd);

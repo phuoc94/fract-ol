@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 19:11:42 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/03 17:19:47 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/03 20:08:32 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,16 @@
 
 static void	draw_fractal(t_data *data, char *fractal_type)
 {
+	t_complex	c;
+
 	if (ft_strcmp(fractal_type, "mandelbrot") == 0)
 		draw_mandelbrot(data);
 	else if (ft_strcmp(fractal_type, "julia") == 0)
-		draw_julia(data);
+	{
+		c.real = data->julia_real;
+		c.imag = data->julia_imag;
+		draw_julia(data, c);
+	}
 }
 
 int32_t	main(int argc, char **argv)
@@ -27,7 +33,7 @@ int32_t	main(int argc, char **argv)
 	if (validate_args(argc, argv) == EXIT_FAILURE)
 		return (EXIT_FAILURE);
 	initialize_data(&data, argv);
-	if (setup_window(&data, argv[1]) == EXIT_FAILURE)
+	if (setup_window(&data) == EXIT_FAILURE)
 		return (EXIT_FAILURE);
 	draw_fractal(&data, argv[1]);
 	mlx_scroll_hook(data.mlx, zoom_func, &data);

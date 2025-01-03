@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zoom.c                                             :+:      :+:    :+:   */
+/*   is_within_radius.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/02 20:31:41 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/03 20:09:45 by phuocngu         ###   ########.fr       */
+/*   Created: 2025/01/03 18:11:59 by phuocngu          #+#    #+#             */
+/*   Updated: 2025/01/03 18:12:46 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/fractol.h"
 
-void	zoom_func(double xdelta, double ydelta, void *param)
+int	is_within_radius(t_complex z)
 {
-	t_data		*data;
-	t_complex	c;
-
-	(void)xdelta;
-	data = (t_data *)param;
-	if (ydelta < 0)
-		data->zoom *= 0.9;
-	else if (ydelta > 0)
-		data->zoom /= 0.9;
-	if (ft_strcmp(data->title, "julia") == 0)
-	{
-		c.real = data->julia_real;
-		c.imag = data->julia_imag;
-		draw_julia(data, c);
-	}
-	else
-		draw_mandelbrot(data);
+	return (z.real * z.real + z.imag * z.imag <= 4);
 }

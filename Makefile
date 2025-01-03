@@ -6,7 +6,7 @@
 #    By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 18:26:02 by phuocngu          #+#    #+#              #
-#    Updated: 2025/01/03 14:05:04 by phuocngu         ###   ########.fr        #
+#    Updated: 2025/01/03 18:15:06 by phuocngu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ SRC_FILES = $(SRC_DIR)/main.c \
 			$(SRC_DIR)/utils/get_color.c \
 			$(SRC_DIR)/utils/zoom.c \
 			$(SRC_DIR)/utils/esc_key_func.c \
+			$(SRC_DIR)/utils/is_within_radius.c \
 			$(SRC_DIR)/libft/ft_atof.c \
 			$(SRC_DIR)/libft/ft_strcmp.c \
 			$(SRC_DIR)/libft/ft_putstr_fd.c \

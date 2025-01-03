@@ -6,16 +6,11 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 18:47:56 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/02 21:02:25 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/03 18:17:13 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
-
-static int	is_within_radius(t_complex z)
-{
-	return (z.real * z.real + z.imag * z.imag <= 4);
-}
 
 static int	calc_mandelbrot(t_complex c)
 {

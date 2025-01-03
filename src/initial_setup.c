@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 21:26:52 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/03 13:03:18 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/03 20:09:01 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,26 @@ void	initialize_data(t_data *data, char **argv)
 	data->zoom = 1.0;
 	data->offset_x = 0.0;
 	data->offset_y = 0.0;
-	if (ft_strcmp(argv[1], "julia") == 0 && argv[2] && argv[3])
+	if (ft_strcmp(argv[1], "julia") == 0)
 	{
-		data->julia_real = ft_atof(argv[2]);
-		data->julia_imag = ft_atof(argv[3]);
+		data->title = "julia";
+		data->julia_real = -0.7;
+		data->julia_imag = 0.27015;
+		if (argv[2] && argv[3])
+		{
+			data->julia_real = ft_atof(argv[2]);
+			data->julia_imag = ft_atof(argv[3]);
+		}
+	}
+	else
+	{
+		data->title = "mandelbrot";
 	}
 }
 
-int	setup_window(t_data *data, char *title)
+int	setup_window(t_data *data)
 {
-	data->mlx = mlx_init(WIDTH, HEIGHT, title, true);
+	data->mlx = mlx_init(WIDTH, HEIGHT, data->title, true);
 	if (!data->mlx)
 	{
 		ft_putstr_fd(mlx_strerror(mlx_errno), 2);
