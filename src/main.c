@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 19:11:42 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/02 22:04:58 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/03 12:06:20 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	draw_fractal(t_data *data, char *fractal_type)
 {
-	if (strcmp(fractal_type, "mandelbrot") == 0)
+	if (ft_strcmp(fractal_type, "mandelbrot") == 0)
 		draw_mandelbrot(data);
-	else if (strcmp(fractal_type, "julia") == 0)
+	else if (ft_strcmp(fractal_type, "julia") == 0)
 		draw_julia(data);
 }
 
