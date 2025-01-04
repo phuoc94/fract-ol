@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 21:26:52 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/04 13:38:33 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/04 17:45:17 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	validate_args(int argc, char **argv)
 
 void	initialize_data(t_data *data, char **argv)
 {
+	allocate_colors(data);
 	data->zoom = 1.0;
 	if (ft_strcmp(argv[1], "julia") == 0)
 	{

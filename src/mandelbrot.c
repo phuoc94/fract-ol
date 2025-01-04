@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 18:47:56 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/04 14:14:54 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/04 18:19:40 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	calc_mandelbrot(t_complex c)
 	return (n);
 }
 
-void	draw_mandelbrot(t_data *data)
+static void	draw_mandelbrot_first(t_data *data)
 {
 	t_complex	c;
 	int			x;
@@ -49,9 +49,18 @@ void	draw_mandelbrot(t_data *data)
 			c.imag = -(y - HEIGHT / 2.0) * 4.0 / HEIGHT / data->zoom;
 			n = calc_mandelbrot(c);
 			color = get_color(n);
+			data->colors[y][x] = color;
 			mlx_put_pixel(data->image, x, y, color);
 			y++;
 		}
 		x++;
 	}
+}
+
+void	draw_mandelbrot(t_data *data)
+{
+	if ((data->colors[0][0]) != 0)
+		draw_zoom(data);
+	else
+		draw_mandelbrot_first(data);
 }
