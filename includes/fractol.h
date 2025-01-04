@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 12:56:43 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/03 20:07:24 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/04 13:25:59 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,11 @@
 # include <stdbool.h>
 # include <stdlib.h>
 
-# define WIDTH 800
-# define HEIGHT 800
+# define WIDTH 1920
+# define HEIGHT 1920
 # define MAX_ITER 100
 
-# define BLACK 0x000000
-# define RED 0xFF0000
-# define GREEN 0x00FF00
-# define BLUE 0x0000FF
-# define WHITE 0xFFFFFF
-
-typedef struct
+typedef struct s_complex
 {
 	double		real;
 	double		imag;
