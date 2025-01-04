@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 21:26:52 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/03 20:09:01 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/04 13:38:33 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ int	validate_args(int argc, char **argv)
 void	initialize_data(t_data *data, char **argv)
 {
 	data->zoom = 1.0;
-	data->offset_x = 0.0;
-	data->offset_y = 0.0;
 	if (ft_strcmp(argv[1], "julia") == 0)
 	{
 		data->title = "julia";

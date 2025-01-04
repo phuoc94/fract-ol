@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 18:47:56 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/03 18:17:13 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/04 14:14:54 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,10 @@ static int	calc_mandelbrot(t_complex c)
 	t_complex	z;
 	double		temp;
 	int			n;
-	double		real_squared;
-	double		imag_squared;
 
 	z.real = 0;
 	z.imag = 0;
 	n = 0;
-	real_squared = z.real * z.real;
-	imag_squared = z.imag * z.imag;
-	temp = real_squared - imag_squared + c.real;
-	z.imag = 2 * z.real * z.imag + c.imag;
-	z.real = temp;
 	while (is_within_radius(z) && n < MAX_ITER)
 	{
 		temp = z.real * z.real - z.imag * z.imag + c.real;
@@ -52,10 +45,8 @@ void	draw_mandelbrot(t_data *data)
 		y = 0;
 		while (y < HEIGHT)
 		{
-			c.real = (x - WIDTH / 2.0) * 4.0 / WIDTH / data->zoom
-				+ data->offset_x;
-			c.imag = (y - HEIGHT / 2.0) * 4.0 / HEIGHT / data->zoom
-				+ data->offset_y;
+			c.real = (x - WIDTH / 2.0) * 4.0 / WIDTH / data->zoom;
+			c.imag = -(y - HEIGHT / 2.0) * 4.0 / HEIGHT / data->zoom;
 			n = calc_mandelbrot(c);
 			color = get_color(n);
 			mlx_put_pixel(data->image, x, y, color);

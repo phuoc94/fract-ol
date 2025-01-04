@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 12:56:43 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/04 13:25:59 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/04 13:57:37 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # include <stdbool.h>
 # include <stdlib.h>
 
-# define WIDTH 1920
-# define HEIGHT 1920
+# define WIDTH 800
+# define HEIGHT 800
 # define MAX_ITER 100
 
 typedef struct s_complex
@@ -33,8 +33,6 @@ typedef struct s_data
 	mlx_t		*mlx;
 	mlx_image_t	*image;
 	double		zoom;
-	double		offset_x;
-	double		offset_y;
 	double		julia_real;
 	double		julia_imag;
 }				t_data;
