@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 19:11:42 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/04 15:40:49 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/04 23:55:28 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ int32_t	main(int argc, char **argv)
 	mlx_key_hook(data.mlx, &esc_key_func, &data);
 	mlx_loop(data.mlx);
 	mlx_terminate(data.mlx);
+	free_colors(&data);
 	return (EXIT_SUCCESS);
 }
