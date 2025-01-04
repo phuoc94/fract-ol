@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 18:47:56 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/03 20:14:23 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/04 10:31:25 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	calc_julia(t_complex z, t_complex c)
 	return (n);
 }
 
-void	draw_julia(t_data *data, t_complex	c)
+void	draw_julia(t_data *data, t_complex c)
 {
 	t_complex	z;
 	int			x;
@@ -44,7 +44,7 @@ void	draw_julia(t_data *data, t_complex	c)
 		{
 			z.real = (x - WIDTH / 2.0) * 4.0 / WIDTH / data->zoom
 				+ data->offset_x;
-			z.imag = (y - HEIGHT / 2.0) * 4.0 / HEIGHT / data->zoom
+			z.imag = -(y - HEIGHT / 2.0) * 4.0 / HEIGHT / data->zoom
 				+ data->offset_y;
 			n = calc_julia(z, c);
 			color = get_color(n);
