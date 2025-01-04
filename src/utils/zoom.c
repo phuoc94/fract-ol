@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/02 20:31:41 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/04 18:41:40 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/04 21:18:55 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,12 @@ void	zoom_func(double xdelta, double ydelta, void *param)
 
 void	draw_zoom(t_data *data)
 {
-	int	x;
-	int	y;
-	int	cache_x;
-	int	cache_y;
+	t_complex	c;
+	t_complex	z;
+	int			x;
+	int			y;
+	int			cache_x;
+	int			cache_y;
 
 	x = 0;
 	while (x < WIDTH)
@@ -55,7 +57,22 @@ void	draw_zoom(t_data *data)
 					data->colors[cache_y][cache_x]);
 			}
 			else
-				mlx_put_pixel(data->image, x, y, 0x000000FF);
+			{
+				z.real = (x - WIDTH / 2.0) * 4.0 / WIDTH / data->zoom;
+				z.imag = -(y - HEIGHT / 2.0) * 4.0 / HEIGHT / data->zoom;
+				if (ft_strcmp(data->title, "julia") == 0)
+				{
+					c.imag = data->julia_imag;
+					c.real = data->julia_real;
+					mlx_put_pixel(data->image, x, y,
+						get_color(calc_julia(z, c)));
+				}
+				else
+				{
+					mlx_put_pixel(data->image, x, y,
+						get_color(calc_mandelbrot(z)));
+				}
+			}
 			y++;
 		}
 		x++;

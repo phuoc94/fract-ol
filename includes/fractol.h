@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/23 12:56:43 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/04 18:43:50 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/04 20:54:42 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ void			draw_zoom(t_data *data);
 void			esc_key_func(mlx_key_data_t keydata, void *param);
 int				is_within_radius(t_complex z);
 void			free_colors(t_data *data);
+int				calc_mandelbrot(t_complex c);
+int				calc_julia(t_complex z, t_complex c);
 
 int				ft_strcmp(const char *s1, const char *s2);
 void			ft_putstr_fd(const char *s, int fd);

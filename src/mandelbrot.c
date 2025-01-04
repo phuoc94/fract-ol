@@ -6,13 +6,13 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 18:47:56 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/04 18:19:40 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/04 20:10:31 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-static int	calc_mandelbrot(t_complex c)
+int	calc_mandelbrot(t_complex c)
 {
 	t_complex	z;
 	double		temp;
