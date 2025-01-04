@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 19:11:42 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/03 20:08:32 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/04 15:40:49 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int32_t	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	draw_fractal(&data, argv[1]);
 	mlx_scroll_hook(data.mlx, zoom_func, &data);
-	mlx_key_hook(data.mlx, &esc_key_func, NULL);
+	mlx_key_hook(data.mlx, &esc_key_func, &data);
 	mlx_loop(data.mlx);
 	mlx_terminate(data.mlx);
 	return (EXIT_SUCCESS);
