@@ -51,8 +51,18 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Local configuration file (sdk path, etc)
+# Misc
+main.c
+temp/
 .vscode/
+lib/glfw/
+.DS_Store
 
-# Project files
-fractol
+# Special shader files
+mlx_*_shader.c
+build/
+main.c
+test
+
+# Automatic downloaded deps
+_deps/
