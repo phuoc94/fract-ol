@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/27 20:20:32 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/04 18:23:58 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/04 22:19:29 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	allocate_colors(t_data *data)
 		data->colors[i] = malloc(sizeof(uint32_t) * WIDTH);
 		i++;
 	}
-	data->colors[0][0] = 0;
+	data->colors[0][0] = 1;
 }
 
 void	free_colors(t_data *data)

@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 18:47:56 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/04 20:10:31 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/04 22:20:03 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static void	draw_mandelbrot_first(t_data *data)
 
 void	draw_mandelbrot(t_data *data)
 {
-	if ((data->colors[0][0]) != 0)
+	if ((data->colors[0][0]) != 1)
 		draw_zoom(data);
 	else
 		draw_mandelbrot_first(data);

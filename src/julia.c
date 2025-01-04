@@ -6,7 +6,7 @@
 /*   By: phuocngu <phuocngu@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 18:47:56 by phuocngu          #+#    #+#             */
-/*   Updated: 2025/01/04 20:54:27 by phuocngu         ###   ########.fr       */
+/*   Updated: 2025/01/04 22:19:53 by phuocngu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static void	draw_julia_first(t_data *data, t_complex c)
 
 void	draw_julia(t_data *data, t_complex c)
 {
-	if ((data->colors[0][0]) != 0)
+	if ((data->colors[0][0]) != 1)
 		draw_zoom(data);
 	else
 		draw_julia_first(data, c);
